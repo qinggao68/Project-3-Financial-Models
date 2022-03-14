@@ -1,36 +1,24 @@
-# Project-3-Financial-Models
-
 # Purpose
 
-The purpose of this project is to perform portfolio analysis in python. The stocks in my portfolio are: Target, Chevron, General Electric, Teladoc Health, NextEra Energy, American Express, Coca-Cola, and Phillips 66. I also benchmarked my portfolio to iShares Core S&P 500 ETF(IVV) as it contained all the stocks I have selected except Teladoc Health. 
+The purpose of this project is to build a various of different financial models using python. I built a Comparable Companies model, a DCF model, and a simple LBO model as in demonstration. 
 
-There are four major parts to my analysis: 
-1. randomly assigned portfolio weights to calculate some common metrics like sharpe ratio 
-2. utilized the fama-french 5 factors model and compare that to my portfolio 
-3. ran a monte carlo simulation and utilized the scipy package to determine the optimal portfolio weights under the condition of achieving maximum sharpe ratio or minimal volatility 
-4. created a tear sheet 
+Note: By no means are these models shown in here are to replaced the financial models you can build in excel. It is merely a supplemental tool that I hope will help speed up the initial valuation process, especially if your team has a couple of interested targets in the pipeline. 
 
-Please view the project scope section for a more detailed outline of the analysis. 
+## Comparable Companies Analysis Model
 
-## Additional Information
+In this notebook, I used FinancialModelingPrep's API to retrieve a various of financial and valuation metrics for UHS, CVS, ANTM, CI, HUM, CNC, and MOH in the healthcare insurance space. Since, I am using a free API that is quite unstable, I am not able to retrieve all the valuation metrics for the selected companies at one time. The best way to do this, if you are also using a free API, is to comment all the other metrics, only retrieve the first metric, run it and write it to xlsx file, then repeat until you have all the valuation metrics you need for your comparable companies analysis model. 
 
-I tried to make my code as much as automated, meaning that if you are interested in finding the optimal weights of your own selected stocks, all you have to do is just change the ticker(s). The only data that need to be updated is the fama-french 5 factors, but this can easily accessed online(please see the link to download the updated data). 
+## Discounted Cash Flow Model 
 
-NOTE: quantstats package provide a html file to access the tear sheet, so you would need to run on your computer to view the tear sheet. 
+The assumptions and the Income Statement I used are based on one of the deals I was working on in the past. This is a very simple DCF model I built using python. This model can be used as pre-valuation stage as to figure out quickly what the target company is worth. I also built a monte carlo simulation that run 1000 interations to calculate the DCF value. 
 
-# Project Scope(steps?) 
-1. Data Exploration 
-2. Percentage Changes & Standard Deviation 
-3. Skewness & Kurtosis 
-4. Sortino Ratio 
-5. Fama-French 5 Factor Model 
-6. Monte Carlo Simulation 
-7. Scipy Package to Optimize Portfolio Weights 
-8. Tear Sheet
+## LBO Model
+
+This model is adapted from one of the case studies provided by BreakingIntoWallStreet. It is an hour long CS. The assumptions in my model are based on the instructions provided in the CS. 
+
+## Future Work 
+
+As of now, these models are all standalone. In the future, I hope to create a more complicated DCF model and incorporated the median from the comparable companies analysis model to calculate the terminal value via multiples method. 
 
 ## References 
-[Fama-French 5 Factors Model data] https://mba.tuck.dartmouth.edu/pages/faculty/ken.french/data_library.html
-
-[QuantInsti Blog] https://blog.quantinsti.com/portfolio-optimization-maximum-return-risk-ratio-python/
-
-[quantstats documentation] https://github.com/ranaroussi/quantstats
+[ADVANCED FINANCIAL MODELING WITH PYTHON] https://nickderobertis.github.io/fin-model-course/lectures/12-free-cash-flow-estimation-and-forecasting.html
